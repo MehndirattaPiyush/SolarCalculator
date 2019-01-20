@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <fragment
+        android:id="@+id/place_autocomplete_fragment"
+        android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_pin"
+            android:text="Pin Location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onDateButtonClick"/>
+        <Button
+            android:id="@+id/btn_see_pinned"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Pinned Locations"
+            android:onClick="onDateButtonClick"/>
+    </LinearLayout>
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:context=".MapsActivity" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding = "5dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_sun"/>
+            <ImageView
+                android:paddingTop="6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_long_arrow_pointing_up"/>
+            <TextView
+                android:id="@+id/tv_sunrise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:paddingTop="6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:alpha="0.25"
+                android:src="@drawable/ic_download_arrow"/>
+            <TextView
+                android:id="@+id/tv_sunset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_moon"/>
+            <ImageView
+                android:paddingTop="6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_long_arrow_pointing_up_blue"/>
+            <TextView
+                android:id="@+id/tv_moonrise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:paddingTop="6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:alpha="0.25"
+                android:src="@drawable/ic_download_arrow_blue"/>
+            <TextView
+                android:id="@+id/tv_moonset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:id="@+id/btn_prev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onDateButtonClick"
+                android:src="@android:drawable/ic_media_previous"/>
+
+            <ImageButton
+                android:id="@+id/btn_reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onDateButtonClick"
+                android:src="@android:drawable/ic_menu_revert"/>
+
+            <ImageButton
+                android:id="@+id/btn_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onDateButtonClick"
+                android:src="@android:drawable/ic_media_next"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
